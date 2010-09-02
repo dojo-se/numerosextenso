@@ -1,0 +1,31 @@
+<script language="javascript" src="jsunit/app/jsUnitCore.js"></script>
+
+<script language="javascript">
+    function numeroParaExtenso(num) {
+        switch (num) {
+            case 1:
+                return 'um';
+                break;
+            case 2:
+                return 'dois';
+                break;
+            case 11:
+                return 'onze';
+                break;
+        }
+    }
+</script>
+
+<script language="javascript">
+    function testNum1() {
+        assertEquals('um', numeroParaExtenso(1));
+    }
+    
+    function testNum2() {
+        assertEquals('dois', numeroParaExtenso(2));
+    }
+    
+    function testNum11() {
+        assertEquals('onze', numeroParaExtenso(11));
+    }
+</script>
