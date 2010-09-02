@@ -2,17 +2,10 @@
 
 <script language="javascript">
     function numeroParaExtenso(num) {
-        switch (num) {
-            case 1:
-                return 'um';
-                break;
-            case 2:
-                return 'dois';
-                break;
-            case 11:
-                return 'onze';
-                break;
-        }
+        var retorno = "";
+        var array = ['zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez', 'onze'];
+        retorno = array[num];
+        return retorno;
     }
 </script>
 
@@ -23,6 +16,38 @@
     
     function testNum2() {
         assertEquals('dois', numeroParaExtenso(2));
+    }
+    
+    function testNum3() {
+        assertEquals('três', numeroParaExtenso(3));
+    }
+    
+    function testNum4() {
+        assertEquals('quatro', numeroParaExtenso(4));
+    }
+    
+    function testNum5() {
+        assertEquals('cinco', numeroParaExtenso(5));
+    }
+    
+    function testNum6() {
+        assertEquals('seis', numeroParaExtenso(6));
+    }
+    
+    function testNum7() {
+        assertEquals('sete', numeroParaExtenso(7));
+    }
+    
+    function testNum8() {
+        assertEquals('oito', numeroParaExtenso(8));
+    }
+    
+    function testNum9() {
+        assertEquals('nove', numeroParaExtenso(9));
+    }
+    
+    function testNum10() {
+        assertEquals('dez', numeroParaExtenso(10));
     }
     
     function testNum11() {
