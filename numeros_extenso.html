@@ -12,15 +12,11 @@
         var centenas = ['', 'cento', 'duzentos', 'trezentos', 'quatrocentos', 
         'quinhentos', 'seiscentos', 'setecentos', 'oitocentos', 'novecentos'];
         
-        
         //Casos especiais
         if (num < 20)
             return unidades[num];
         else if (num == 100)
             return 'cem';
-//        else if (num == 125)
-//            return 'cento e vinte e cinco';
-            
         //Fim dos casos especias
 
         var por_extenso = '';
@@ -130,27 +126,25 @@
     
     function testeNum199(){
         assertEquals('cento e noventa e nove', numeroParaExtenso(199));
-    }    
+    }
     
     function testeNum200(){
         assertEquals('duzentos', numeroParaExtenso(200));
-    }       
+    }
     
     function testeNum201(){
         assertEquals('duzentos e um', numeroParaExtenso(201));
-    }       
+    }
     
     function testeNum220(){
         assertEquals('duzentos e vinte', numeroParaExtenso(220));
-    }     
+    }
     
     function testeNum222(){
         assertEquals('duzentos e vinte e dois', numeroParaExtenso(222));
-    }     
+    }
     
     function testeNum999(){
         assertEquals('novecentos e noventa e nove', numeroParaExtenso(999));
-    }     
-    
-    
+    }
 </script>
