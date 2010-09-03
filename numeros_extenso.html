@@ -2,10 +2,23 @@
 
 <script language="javascript">
     function numeroParaExtenso(num) {
-        var retorno = "";
-        var array = ['zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez', 'onze'];
-        retorno = array[num];
-        return retorno;
+        var unidades = ['zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis',
+            'sete', 'oito', 'nove', 'dez', 'onze', 'doze', 'treze', 'quatorze',
+            'quinze', 'dezesseis', 'dezessete', 'dezoito', 'dezenove'];
+        
+        if (num < 20)
+            return unidades[num];
+        
+        var dezenas = ['', '', 'vinte', 'trinta', 'quarenta', 'cinquenta',
+            'sessenta', 'setenta', 'oitenta', 'noventa'];
+        var unidade = num % 10;
+        var dezena = Math.floor(num / 10);
+        
+        por_extenso = dezenas[dezena];
+        if (unidade != 0)
+            por_extenso += ' e ' + unidades[unidade];
+        
+        return por_extenso;
     }
 </script>
 
@@ -52,5 +65,37 @@
     
     function testNum11() {
         assertEquals('onze', numeroParaExtenso(11));
+    }
+    
+    function testNum21() {
+        assertEquals('vinte e um', numeroParaExtenso(21));
+    }
+    
+    function testNum22() {
+        assertEquals('vinte e dois', numeroParaExtenso(22));
+    }
+    
+    function testNum33() {
+        assertEquals('trinta e três', numeroParaExtenso(33));
+    }
+    
+    function testNum46() {
+        assertEquals('quarenta e seis', numeroParaExtenso(46));
+    }
+    
+    function testNum57() {
+        assertEquals('cinquenta e sete', numeroParaExtenso(57));
+    }
+    
+    function testNum60() {
+        assertEquals('sessenta', numeroParaExtenso(60));
+    }
+    
+    function testNum90() {
+        assertEquals('noventa', numeroParaExtenso(90));
+    }
+    
+    function testNum99() {
+        assertEquals('noventa e nove', numeroParaExtenso(99));
     }
 </script>
