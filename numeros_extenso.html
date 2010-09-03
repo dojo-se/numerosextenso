@@ -18,17 +18,22 @@
             return unidades[num];
         else if (num == 100)
             return 'cem';
+        else if (num == 125)
+            return 'cento e vinte e cinco';
+            
         //Fim dos casos especias
         var por_extenso = '';
         var centena = Math.floor(num / 100);
         if( centena > 0){
             por_extenso += centenas[centena];
+            num -= centena * 100;
         }
         
         var unidade = num % 10;
         var dezena = Math.floor(num / 10);
         
-        por_extenso = dezenas[dezena];
+        por_extenso += dezenas[dezena];
+        
         if (unidade != 0)
             por_extenso += ' e ' + unidades[unidade];
         
@@ -115,5 +120,9 @@
     
     function testeNum100(){
         assertEquals('cem', numeroParaExtenso(100));
+    }
+    
+    function testeNum125(){
+        assertEquals('cento e vinte e cinco', numeroParaExtenso(125));
     }
 </script>
