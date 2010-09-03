@@ -5,12 +5,26 @@
         var unidades = ['zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis',
             'sete', 'oito', 'nove', 'dez', 'onze', 'doze', 'treze', 'quatorze',
             'quinze', 'dezesseis', 'dezessete', 'dezoito', 'dezenove'];
-        
-        if (num < 20)
-            return unidades[num];
-        
+      
         var dezenas = ['', '', 'vinte', 'trinta', 'quarenta', 'cinquenta',
             'sessenta', 'setenta', 'oitenta', 'noventa'];
+        
+        var centenas = ['', 'cento', 'duzentos', 'trezentos', 'quatrocentos', 
+        'quinhentos', 'seiscentos', 'setecentos', 'oitocentos', 'novecentos'];
+        
+        
+        //Casos especiais
+        if (num < 20)
+            return unidades[num];
+        else if (num == 100)
+            return 'cem';
+        //Fim dos casos especias
+        var por_extenso = '';
+        var centena = Math.floor(num / 100);
+        if( centena > 0){
+            por_extenso += centenas[centena];
+        }
+        
         var unidade = num % 10;
         var dezena = Math.floor(num / 10);
         
@@ -97,5 +111,9 @@
     
     function testNum99() {
         assertEquals('noventa e nove', numeroParaExtenso(99));
+    }
+    
+    function testeNum100(){
+        assertEquals('cem', numeroParaExtenso(100));
     }
 </script>
