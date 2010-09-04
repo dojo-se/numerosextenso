@@ -1,0 +1,5 @@
+Para utilizar o teste feito em JavaScript, os arquivos precisam estar em um servidor Web (sei que é estranho, pois JS é client-side)
+
+Em um browser, abra o arquivo 'testRunner.html' (pelo caminho do servidor, http://, não file://), que está dentro do diretório 'jsunit' (alguns browsers não abrem corretamente essa página, foi testado com o Firefox).
+
+Nessa página de testes, há um input para informar o caminho do arquivo em que se encontra os testes, no caso desse Dojo, é o 'numeros_extenso.html'. LEMBRE-SE que o caminho é pelo servidor WEB!!!
